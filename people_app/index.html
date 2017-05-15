@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>7. óra</title>
+    <script src="./scripts.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label>Vezetéknév:</label>
+            <input type="text" class="form-control" id="veznev">
+        </div>
+        <div class="form-group">
+            <label>Keresztnév:</label>
+            <input type="text" class="form-control" id="kernev">
+        </div>
+        <div>
+            <button class="btn btn-primary" onclick="hozzaad()">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Hozzáad
+            </button>
+            <button class="btn btn-success" onclick="beolvas()">
+                <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> Beolvasás
+            </button>
+            <button class="btn btn-danger" onclick="torol()">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Törlés
+            </button>
+        </div>
+        <div id="resultdiv">
+
+        </div>
+    </div>
+</body>
+
+</html>
