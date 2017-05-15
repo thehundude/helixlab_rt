@@ -28,8 +28,9 @@ function konvertalas() {
 
 // div-hez a nevek hozzáfűzése
 function hozzafuzes(person) {
-    // létrehoz egy paragraph-ot, hozzáadja a szöveget
-    var paragraph = document.createElement("p");
+    // létrehoz egy labelt, hozzáadja a szöveget
+    var paragraph = document.createElement("label");
+    paragraph.className += "col-md-1";
     var node = document.createTextNode(person.lastName + " " + person.firstName);
     paragraph.appendChild(node);
 
