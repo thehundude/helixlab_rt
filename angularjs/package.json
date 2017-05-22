@@ -1,0 +1,13 @@
+{
+    "name": "angular-quickstart",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "http-server ./app -p 8080 -c-1"
+    },
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "http-server": "0.10.0"
+    }
+}
