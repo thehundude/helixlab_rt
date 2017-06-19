@@ -8,6 +8,7 @@
     <script src="app.js"></script>
     <script src="greetercomponent/greeter-component.js"></script>
     <script src="movies-component/movies-component.js"></script>
+    <script src="services/my.services.js"></script>
 </head>
 
 <body>
@@ -25,6 +26,8 @@
             <li ng-repeat="movie in movies">
                 <p>{{ movie.title }}</p>
                 <p>{{ movie.description }}</p>
+                <p>Azonosító: {{ movie.id }}</p>
+                <button ng-click="deleteMovie(movie)">Törlés</button>
             </li>
         </ul>
         </div>
