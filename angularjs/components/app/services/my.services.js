@@ -42,5 +42,9 @@ moviesApp.factory('moviesAppService', function () {
         allMovies.splice(movieIndex, 1);
     }
 
+    service.modifyMovieService = function(movie) {
+        allMovies[movie.id - 1] = movie;
+    }
+
     return service;
 });
