@@ -1,0 +1,16 @@
+<div ng-controller="moviesController">
+    <div>
+        <a class="btn btn-default" href="#!/create">Hozzáad</a>
+    </div>
+    <div ng-init="getMoviesOnClick();">
+        <ul>
+            <li ng-repeat="movie in movies">
+                <p>{{ movie.title }}</p>
+                <p>{{ movie.description }}</p>
+                <p>Azonosító: {{ movie.id }}</p>
+                <button ng-click="editMovie(movie)">Szerkesztés</button>
+                <button ng-click="deleteMovie(movie)">Törlés</button>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -4,36 +4,23 @@
 <head>
     <meta charset="utf-8">
     <title>AngularJS Components</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="app.js"></script>
+    <script src="modules/movies/movies.controller.js"></script>
+    <script src="modules/movies/movies.create.controller.js"></script>
     <script src="greetercomponent/greeter-component.js"></script>
     <script src="movies-component/movies-component.js"></script>
     <script src="services/my.services.js"></script>
+    <base href="/">
 </head>
 
 <body>
-    <div ng-controller="moviesController">
-        <div>
-            <span>Film címe: </span>
-            <input name="movieTitle" type="text" ng-model="movie.title"></br>
-            <span>Leírás: </span>
-            <input name="movieDesc" type="text" ng-model="movie.description"></br>
-            <button ng-if="!editMode" ng-click="addMovie()">Hozzáad</button>
-            <button ng-if="editMode" ng-click="modifyMovie()">Szerkesztés</button>
-        </div>
-        <button ng-click="getMoviesOnClick()">Filmek</button>
-        <div>
-        <ul>
-            <li ng-repeat="movie in movies">
-                <p>{{ movie.title }}</p>
-                <p>{{ movie.description }}</p>
-                <p>Azonosító: {{ movie.id }}</p>
-                <button ng-click="editMovie(movie)">Szerkesztés</button>
-                <button ng-click="deleteMovie(movie)">Törlés</button>
-            </li>
-        </ul>
-        </div>
-    </div>
+    <a href="#!/">HOME</a>
+    <a href="#!/movies">MOVIES</a>
+    <div ng-view></div>
 </body>
 
 </html>

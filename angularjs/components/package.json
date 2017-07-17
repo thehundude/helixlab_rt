@@ -2,7 +2,7 @@
     "name": "angular-quickstart",
     "version": "1.0.0",
     "scripts": {
-        "start": "http-server ./app -p 8080 -c-1"
+        "start": "http-server ./app -p 8081 -c-1"
     },
     "license": "MIT",
     "dependencies": {
