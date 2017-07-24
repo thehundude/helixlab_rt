@@ -10,13 +10,13 @@ moviesApp.controller('moviesCreateController',
             $scope.editMode = true;
         }
 
-        $scope.modifyMovie = function () {
+        /* $scope.modifyMovie = function () {
             moviesAppService.modifyMovieService($scope.movie)
             $scope.movie = {};
             $scope.editMode = false;
-        }
+        } */
 
-        $scope.deleteMovie = function(movie) {
+        /* $scope.deleteMovie = function(movie) {
             moviesAppService.deleteMovieService(movie.id);
-        }
+        } */
     });

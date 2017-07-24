@@ -8,8 +8,8 @@
                 <p>{{ movie.title }}</p>
                 <p>{{ movie.description }}</p>
                 <p>Azonosító: {{ movie.id }}</p>
-                <button ng-click="editMovie(movie)">Szerkesztés</button>
-                <button ng-click="deleteMovie(movie)">Törlés</button>
+                <a class="btn btn-default" href="#!/edit/{{ movie.id }}">Szerkesztés</a>
+                <button class="btn btn-default" ng-click="deleteMovie(movie)">Törlés</button>
             </li>
         </ul>
     </div>

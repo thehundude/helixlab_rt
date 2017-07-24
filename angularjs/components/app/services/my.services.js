@@ -21,17 +21,17 @@ moviesApp.factory('moviesAppService', function () {
 
     var sequence = allMovies.length;
 
-    service.getAllMovies = function() {
+    service.getAllMovies = function () {
         return allMovies;
     }
 
-    service.createMovie = function(movie) {
+    service.createMovie = function (movie) {
         sequence++;
         movie.id = sequence;
         allMovies.push(movie);
     }
 
-    service.deleteMovieService = function(movieId) {
+    service.deleteMovieService = function (movieId) {
         var movieIndex = 0;
         for (var i = 0; i < allMovies.length; i++) {
             if (allMovies[i].id == movieId) {
@@ -42,8 +42,20 @@ moviesApp.factory('moviesAppService', function () {
         allMovies.splice(movieIndex, 1);
     }
 
-    service.modifyMovieService = function(movie) {
-        allMovies[movie.id - 1] = movie;
+    service.modifyMovieService = function (movie) {
+        for (var i = 0; i < allMovies.length, i++;) {
+            if (allMovies[i].id == movie.id) {
+                allMovies[i] = movie;
+            }
+        }
+    }
+
+    service.loadMovieToEdit = function (movieId) {
+        for (var i = 0; i < allMovies.length; i++) {
+            if (allMovies[i].id == movieId) {
+                return allMovies[i];
+            }
+        }
     }
 
     return service;

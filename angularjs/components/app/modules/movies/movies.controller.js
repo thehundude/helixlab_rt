@@ -24,9 +24,10 @@ moviesApp.controller('moviesController',
             moviesAppService.modifyMovieService($scope.movie)
             $scope.movie = {};
             $scope.editMode = false;
-        }
+        } */
 
         $scope.deleteMovie = function(movie) {
             moviesAppService.deleteMovieService(movie.id);
-        } */
+            $scope.getMoviesOnClick();
+        }
 });

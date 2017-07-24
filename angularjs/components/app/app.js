@@ -11,4 +11,7 @@ moviesApp.config (function($routeProvider) {
         .when("/create", {
             templateUrl: "modules/movies/movies-create.html"
         })
+        .when("/edit/:id", {
+            templateUrl: "modules/movies/movies-edit.html"
+        })
 });
