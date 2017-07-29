@@ -1,8 +1,8 @@
-<div ng-controller="moviesCreateController">
-<span>Film címe: </span>
-<input name="movieTitle" type="text" ng-model="movie.title"></br>
-<span>Leírás: </span>
-<input name="movieDesc" type="text" ng-model="movie.description"></br>
+<div class="form-group" ng-controller="moviesCreateController">
+<label>Film címe: </label>
+<input class="form-control" name="movieTitle" type="text" ng-model="movie.title"></br>
+<label>Leírás: </label>
+<input class="form-control" name="movieDesc" type="text" ng-model="movie.description"></br>
 <a class="btn btn-default" ng-if="!editMode" ng-click="addMovie()" href="#!/movies">Hozzáad</a>
 <button ng-if="editMode" ng-click="modifyMovie()">Szerkesztés</button>
 </div>

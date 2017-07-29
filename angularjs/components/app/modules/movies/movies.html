@@ -1,16 +1,26 @@
 <div ng-controller="moviesController">
-    <div>
-        <a class="btn btn-default" href="#!/create">Hozzáad</a>
-    </div>
     <div ng-init="getMoviesOnClick();">
-        <ul>
-            <li ng-repeat="movie in movies">
-                <p>{{ movie.title }}</p>
-                <p>{{ movie.description }}</p>
-                <p>Azonosító: {{ movie.id }}</p>
-                <a class="btn btn-default" href="#!/edit/{{ movie.id }}">Szerkesztés</a>
-                <button class="btn btn-default" ng-click="deleteMovie(movie)">Törlés</button>
-            </li>
-        </ul>
+        <table class="table table-striped">
+            <tr>
+                <th>Cím</th>
+                <th>Leírás</th>
+                <th>Azonosító</th>
+                <th>Lehetőségek</th>
+            </tr>
+            <tr ng-repeat="movie in movies">
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.description }}</td>
+                <td>Azonosító: {{ movie.id }}</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-warning" href="#!/edit/{{ movie.id }}">Szerkesztés</a>
+                        <button class="btn btn-danger" ng-click="deleteMovie(movie)">Törlés</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="btn-group">
+        <a class="btn btn-success" href="#!/create">Hozzáad</a>
     </div>
 </div>

@@ -1,7 +1,7 @@
-<div ng-controller="moviesEditController" ng-init="init();">
-<span>Film címe: </span>
-<input name="movieTitle" type="text" ng-model="movie.title"></br>
-<span>Leírás: </span>
-<input name="movieDesc" type="text" ng-model="movie.description"></br>
-<a class="btn btn-default" ng-click="modifyMovie()" href="#!/movies">Szerkeszt</a>
+<div class="form-group" ng-controller="moviesEditController" ng-init="init();">
+<label>Film címe: </label>
+<input class="form-control" name="movieTitle" type="text" ng-model="movie.title"></br>
+<label>Leírás: </label>
+<input class="form-control" name="movieDesc" type="text" ng-model="movie.description"></br>
+<a class="btn btn-warning" ng-click="modifyMovie()" href="#!/movies">Szerkeszt</a>
 </div>
