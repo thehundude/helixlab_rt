@@ -19,19 +19,37 @@ moviesApp.factory('moviesAppService', function () {
             }*/
     ];
 
+    var getItemFromLocalstorage = function() {
+        // allMovies = JSON.parse(localStorage.getItem("movies")) == null ? [] : JSON.parse(localStorage.getItem("movies"));
+
+        // allMovies = JSON.parse(localStorage.getItem("movies")) || [];
+
+        if (JSON.parse(localStorage.getItem("movies")) == null) {
+            allMovies = [];
+        }
+        else {
+            allMovies = JSON.parse(localStorage.getItem("movies"));
+        }
+    }
+
+    getItemFromLocalstorage();
     var sequence = allMovies.length;
 
     service.getAllMovies = function () {
+        getItemFromLocalstorage();
         return allMovies;
     }
 
     service.createMovie = function (movie) {
+        getItemFromLocalstorage();
         sequence++;
         movie.id = sequence;
         allMovies.push(movie);
+        localStorage.setItem("movies", JSON.stringify(allMovies));
     }
 
     service.deleteMovieService = function (movieId) {
+        getItemFromLocalstorage();
         var movieIndex = 0;
         for (var i = 0; i < allMovies.length; i++) {
             if (allMovies[i].id == movieId) {
@@ -40,17 +58,21 @@ moviesApp.factory('moviesAppService', function () {
             }
         }
         allMovies.splice(movieIndex, 1);
+        localStorage.setItem("movies", JSON.stringify(allMovies));
     }
 
     service.modifyMovieService = function (movie) {
-        for (var i = 0; i < allMovies.length, i++;) {
+        getItemFromLocalstorage();
+        for (var i = 0; i < allMovies.length; i++) {
             if (allMovies[i].id == movie.id) {
                 allMovies[i] = movie;
             }
         }
+        localStorage.setItem("movies", JSON.stringify(allMovies));
     }
 
     service.loadMovieToEdit = function (movieId) {
+        getItemFromLocalstorage();
         for (var i = 0; i < allMovies.length; i++) {
             if (allMovies[i].id == movieId) {
                 return allMovies[i];
