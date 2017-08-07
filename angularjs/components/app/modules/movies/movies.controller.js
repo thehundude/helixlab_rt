@@ -4,7 +4,11 @@ moviesApp.controller('moviesController',
         $scope.editMode = false;
 
         $scope.getMoviesOnClick = function () {
-            $scope.movies = angular.copy(moviesAppService.getAllMovies());
+            // $scope.movies = angular.copy(moviesAppService.getAllMovies());
+            moviesAppService.getAllMovies()
+            .then(function(response) {
+                $scope.movies = response.data;
+            })
         }
 
         $scope.movie = {

@@ -1,4 +1,4 @@
-moviesApp.factory('moviesAppService', function () {
+moviesApp.factory('moviesAppService', function ($http) {
     var service = {};
     var allMovies = [
         /*{
@@ -35,21 +35,31 @@ moviesApp.factory('moviesAppService', function () {
     getItemFromLocalstorage();
     var sequence = allMovies.length;
 
-    service.getAllMovies = function () {
+    /* service.getAllMovies = function () {
         getItemFromLocalstorage();
         return allMovies;
+    } */
+
+    service.getAllMovies = function() {
+        // return $http.get('http://old-wave-2945.getsandbox.com/movie');
+        return $http({
+            method: "GET",
+            url: 'http://old-wave-2945.getsandbox.com/movie'
+        });
     }
 
     service.createMovie = function (movie) {
-        getItemFromLocalstorage();
+        return $http.post('http://old-wave-2945.getsandbox.com/movie', {movie});
+        /* getItemFromLocalstorage();
         sequence++;
         movie.id = sequence;
         allMovies.push(movie);
-        localStorage.setItem("movies", JSON.stringify(allMovies));
+        localStorage.setItem("movies", JSON.stringify(allMovies)); */
     }
 
     service.deleteMovieService = function (movieId) {
-        getItemFromLocalstorage();
+        return $http.delete('http://old-wave-2945.getsandbox.com/movie/' + movieId);
+        /* getItemFromLocalstorage();
         var movieIndex = 0;
         for (var i = 0; i < allMovies.length; i++) {
             if (allMovies[i].id == movieId) {
@@ -58,7 +68,7 @@ moviesApp.factory('moviesAppService', function () {
             }
         }
         allMovies.splice(movieIndex, 1);
-        localStorage.setItem("movies", JSON.stringify(allMovies));
+        localStorage.setItem("movies", JSON.stringify(allMovies)); */
     }
 
     service.modifyMovieService = function (movie) {
